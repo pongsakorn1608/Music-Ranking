@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>รายละเอียดสินค้า - Music Ranking</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .menu {
+            background-color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .menu a {
+            display: inline-block;
+            background-color: #eee;
+            color: #333;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .detail-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .detail-image {
+            width: 50%;
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .detail-content {
+            width: 50%;
+        }
+
+        .category-name {
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .detail-content h2 {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .price {
+            color: #d35400;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .description {
+            line-height: 1.8;
+        }
+
+        .spec {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .spec th,
+        .spec td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .spec th {
+            background-color: #eee;
+        }
+
+        .buy-button {
+            display: block;
+            margin-top: 20px;
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .buy-button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media screen and (max-width: 700px) {
+
+            .detail-box {
+                flex-direction: column;
+            }
+
+            .detail-image,
+            .detail-content {
+                width: 100%;
+            }
+
+            .detail-image img {
+                height: 280px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>🎵 Music Ranking</h1>
+
+</header>
+
+
+<div class="menu">
+
+    <a href="index.html">
+        🏠 หน้าแรก
+    </a>
+
+    <a href="category.html?category=guitar">
+        🎸 กีตาร์
+    </a>
+
+    <a href="category.html?category=piano">
+        🎹 เปียโน
+    </a>
+
+    <a href="category.html?category=drum">
+        🥁 กลอง
+    </a>
+
+    <a href="category.html?category=studio">
+        🎤 สตูดิโอ
+    </a>
+
+</div>
+
+
+<div class="container">
+
+    <div class="detail-box">
+
+
+        <div class="detail-image">
+
+            <img
+                id="productImage"
+                src=""
+                alt="สินค้า">
+
+        </div>
+
+
+        <div class="detail-content">
+
+            <div
+                class="category-name"
+                id="productCategory">
+            </div>
+
+            <h2 id="productName">
+                กำลังโหลด...
+            </h2>
+
+            <div
+                class="price"
+                id="productPrice">
+            </div>
+
+            <p
+                class="description"
+                id="productDescription">
+            </p>
+
+
+            <table class="spec">
+
+                <tr>
+
+                    <th>
+                        รายละเอียด
+                    </th>
+
+                    <th>
+                        ข้อมูล
+                    </th>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        ประเภท
+                    </td>
+
+                    <td id="specType">
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        เหมาะสำหรับ
+                    </td>
+
+                    <td id="specUse">
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        จุดเด่น
+                    </td>
+
+                    <td id="specFeature">
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+            <a href="#" class="buy-button">
+                🛒 สั่งซื้อสินค้า
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 Music Ranking
+    </p>
+
+</footer>
+
+
+<script>
+
+    /* -----------------------------
+       ข้อมูลสินค้า
+    ----------------------------- */
+
+    var products = {
+
+        "yamaha-f310": {
+
+            name: "Yamaha F310",
+
+            category: "🎸 กีตาร์",
+
+            price: "4,500 บาท",
+
+            image: "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=1000&q=80",
+
+            description:
+                "กีตาร์โปร่งสำหรับผู้เริ่มต้น เหมาะสำหรับการฝึกเล่นและการเล่นดนตรีทั่วไป",
+
+            type: "กีตาร์โปร่ง",
+
+            use: "ผู้เริ่มต้น",
+
+            feature: "เสียงดี จับคอง่าย และราคาเข้าถึงได้"
+
+        },
+
+
+        "casio-cdp-s100": {
+
+            name: "Casio CDP-S100",
+
+            category: "🎹 เปียโนและคีย์บอร์ด",
+
+            price: "14,900 บาท",
+
+            image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=1000&q=80",
+
+            description:
+                "เปียโนไฟฟ้าขนาดกะทัดรัด เหมาะสำหรับฝึกซ้อมและผู้เริ่มต้น",
+
+            type: "Digital Piano",
+
+            use: "ผู้เริ่มต้นและนักเรียนดนตรี",
+
+            feature: "88 คีย์ พร้อม Hammer Action"
+
+        },
+
+
+        "roland-td-1dmk": {
+
+            name: "Roland TD-1DMK",
+
+            category: "🥁 กลองและเพอร์คัชชัน",
+
+            price: "28,500 บาท",
+
+            image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=1000&q=80",
+
+            description:
+                "กลองไฟฟ้าสำหรับผู้ที่ต้องการฝึกซ้อม ให้ความรู้สึกใกล้เคียงกับกลองจริง",
+
+            type: "กลองไฟฟ้า",
+
+            use: "ผู้เริ่มต้นและนักดนตรี",
+
+            feature: "Mesh Head และชุดเสียงหลายรูปแบบ"
+
+        },
+
+
+        "audio-technica-at2020": {
+
+            name: "Audio-Technica AT2020",
+
+            category: "🎤 อุปกรณ์สตูดิโอ",
+
+            price: "3,990 บาท",
+
+            image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1000&q=80",
+
+            description:
+                "ไมโครโฟนสำหรับบันทึกเสียง เหมาะสำหรับร้องเพลง ทำเพลง และงานสตูดิโอ",
+
+            type: "Condenser Microphone",
+
+            use: "ร้องเพลงและบันทึกเสียง",
+
+            feature: "Cardioid และตอบสนองความถี่กว้าง"
+
+        }
+
+    };
+
+
+    /* -----------------------------
+       อ่านชื่อสินค้าจาก URL
+    ----------------------------- */
+
+    var urlParams =
+        new URLSearchParams(window.location.search);
+
+    var productID =
+        urlParams.get("product");
+
+
+    var product =
+        products[productID];
+
+
+    /* -----------------------------
+       แสดงข้อมูล
+    ----------------------------- */
+
+    if (product) {
+
+        document.getElementById("productImage").src =
+            product.image;
+
+        document.getElementById("productImage").alt =
+            product.name;
+
+        document.getElementById("productCategory").innerText =
+            product.category;
+
+        document.getElementById("productName").innerText =
+            product.name;
+
+        document.getElementById("productPrice").innerText =
+            product.price;
+
+        document.getElementById("productDescription").innerText =
+            product.description;
+
+        document.getElementById("specType").innerText =
+            product.type;
+
+        document.getElementById("specUse").innerText =
+            product.use;
+
+        document.getElementById("specFeature").innerText =
+            product.feature;
+
+        document.title =
+            product.name + " - Music Ranking";
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
