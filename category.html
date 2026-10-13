@@ -5,14 +5,12 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Music Ranking - หมวดหมู่</title>
 
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -141,7 +139,6 @@
             }
 
         }
-
     </style>
 
 </head>
@@ -150,170 +147,169 @@
 <body>
 
 
-<header>
+    <header>
 
-    <h1>🎵 Music Ranking</h1>
+        <h1>🎵 Music Ranking</h1>
 
-    <p id="subtitle">
-        หมวดหมู่เครื่องดนตรี
-    </p>
+        <p id="subtitle">
+            หมวดหมู่เครื่องดนตรี
+        </p>
 
-</header>
-
-
-<div class="category">
-
-    <a href="index.html">
-        🏠 หน้าแรก
-    </a>
-
-    <a href="category.html?category=guitar">
-        🎸 กีตาร์
-    </a>
-
-    <a href="category.html?category=piano">
-        🎹 เปียโนและคีย์บอร์ด
-    </a>
-
-    <a href="category.html?category=drum">
-        🥁 กลองและเพอร์คัชชัน
-    </a>
-
-    <a href="category.html?category=wind">
-        🎷 เครื่องเป่า
-    </a>
-
-    <a href="category.html?category=studio">
-        🎤 อุปกรณ์สตูดิโอ
-    </a>
-
-</div>
+    </header>
 
 
-<div class="container">
+    <div class="category">
 
-    <h2 id="categoryTitle">
-        กำลังโหลด...
-    </h2>
+        <a href="index.html">
+            🏠 หน้าแรก
+        </a>
 
+        <a href="category.html?category=guitar">
+            🎸 กีตาร์
+        </a>
 
-    <div class="product-list"
-         id="productList">
+        <a href="category.html?category=piano">
+            🎹 เปียโนและคีย์บอร์ด
+        </a>
+
+        <a href="category.html?category=drum">
+            🥁 กลองและเพอร์คัชชัน
+        </a>
+
+        <a href="category.html?category=wind">
+            🎷 เครื่องเป่า
+        </a>
+
+        <a href="category.html?category=studio">
+            🎤 อุปกรณ์สตูดิโอ
+        </a>
 
     </div>
 
-</div>
+
+    <div class="container">
+
+        <h2 id="categoryTitle">
+            กำลังโหลด...
+        </h2>
 
 
-<footer>
+        <div class="product-list" id="productList">
 
-    <p>
-        © 2026 Music Ranking
-    </p>
+        </div>
 
-</footer>
+    </div>
 
 
-<script>
+    <footer>
 
-    /* -----------------------------
-       ข้อมูลสินค้า
-    ----------------------------- */
+        <p>
+            © 2026 Music Ranking
+        </p>
 
-    var products = [
-
-        {
-            name: "Yamaha F310",
-            category: "guitar",
-            categoryName: "กีตาร์",
-            price: "4,500 บาท",
-            image: "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80",
-            description: "กีตาร์โปร่งสำหรับผู้เริ่มต้น เสียงดีและจับคอง่าย",
-            link: "detail.html?product=yamaha-f310"
-        },
-
-        {
-            name: "Casio CDP-S100",
-            category: "piano",
-            categoryName: "เปียโนและคีย์บอร์ด",
-            price: "14,900 บาท",
-            image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80",
-            description: "เปียโนไฟฟ้าขนาดกะทัดรัด เหมาะสำหรับผู้เริ่มต้น",
-            link: "detail.html?product=casio-cdp-s100"
-        },
-
-        {
-            name: "Roland TD-1DMK",
-            category: "drum",
-            categoryName: "กลองและเพอร์คัชชัน",
-            price: "28,500 บาท",
-            image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80",
-            description: "กลองไฟฟ้าสำหรับฝึกซ้อม ให้ความรู้สึกใกล้เคียงกลองจริง",
-            link: "detail.html?product=roland-td-1dmk"
-        },
-
-        {
-            name: "Audio-Technica AT2020",
-            category: "studio",
-            categoryName: "อุปกรณ์สตูดิโอ",
-            price: "3,990 บาท",
-            image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80",
-            description: "ไมโครโฟนสำหรับบันทึกเสียงและร้องเพลง",
-            link: "detail.html?product=audio-technica-at2020"
-        }
-
-    ];
+    </footer>
 
 
-    /* -----------------------------
-       อ่านหมวดหมู่จาก URL
-    ----------------------------- */
+    <script>
 
-    var urlParams =
-        new URLSearchParams(window.location.search);
+        /* -----------------------------
+           ข้อมูลสินค้า
+        ----------------------------- */
 
-    var selectedCategory =
-        urlParams.get("category");
+        var products = [
+
+            {
+                name: "Yamaha F310",
+                category: "guitar",
+                categoryName: "กีตาร์",
+                price: "4,500 บาท",
+                image: "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80",
+                description: "กีตาร์โปร่งสำหรับผู้เริ่มต้น เสียงดีและจับคอง่าย",
+                link: "detail.html?product=yamaha-f310"
+            },
+
+            {
+                name: "Casio CDP-S100",
+                category: "piano",
+                categoryName: "เปียโนและคีย์บอร์ด",
+                price: "14,900 บาท",
+                image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80",
+                description: "เปียโนไฟฟ้าขนาดกะทัดรัด เหมาะสำหรับผู้เริ่มต้น",
+                link: "detail.html?product=casio-cdp-s100"
+            },
+
+            {
+                name: "Roland TD-1DMK",
+                category: "drum",
+                categoryName: "กลองและเพอร์คัชชัน",
+                price: "28,500 บาท",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80",
+                description: "กลองไฟฟ้าสำหรับฝึกซ้อม ให้ความรู้สึกใกล้เคียงกลองจริง",
+                link: "detail.html?product=roland-td-1dmk"
+            },
+
+            {
+                name: "Audio-Technica AT2020",
+                category: "studio",
+                categoryName: "อุปกรณ์สตูดิโอ",
+                price: "3,990 บาท",
+                image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80",
+                description: "ไมโครโฟนสำหรับบันทึกเสียงและร้องเพลง",
+                link: "detail.html?product=audio-technica-at2020"
+            }
+
+        ];
 
 
-    var categoryNames = {
+        /* -----------------------------
+           อ่านหมวดหมู่จาก URL
+        ----------------------------- */
 
-        guitar: "🎸 กีตาร์",
+        var urlParams =
+            new URLSearchParams(window.location.search);
 
-        piano: "🎹 เปียโนและคีย์บอร์ด",
-
-        drum: "🥁 กลองและเพอร์คัชชัน",
-
-        wind: "🎷 เครื่องเป่า",
-
-        studio: "🎤 อุปกรณ์สตูดิโอ"
-
-    };
+        var selectedCategory =
+            urlParams.get("category");
 
 
-    document.getElementById("categoryTitle").innerText =
-        "จัดอันดับ " +
-        (categoryNames[selectedCategory] || "เครื่องดนตรี");
+        var categoryNames = {
+
+            guitar: "🎸 กีตาร์",
+
+            piano: "🎹 เปียโนและคีย์บอร์ด",
+
+            drum: "🥁 กลองและเพอร์คัชชัน",
+
+            wind: "🎷 เครื่องเป่า",
+
+            studio: "🎤 อุปกรณ์สตูดิโอ"
+
+        };
 
 
-    document.getElementById("subtitle").innerText =
-        "แนะนำเครื่องดนตรีในหมวด " +
-        (categoryNames[selectedCategory] || "ทั้งหมด");
+        document.getElementById("categoryTitle").innerText =
+            "จัดอันดับ " +
+            (categoryNames[selectedCategory] || "เครื่องดนตรี");
 
 
-    /* -----------------------------
-       แสดงสินค้า
-    ----------------------------- */
-
-    var productList =
-        document.getElementById("productList");
+        document.getElementById("subtitle").innerText =
+            "แนะนำเครื่องดนตรีในหมวด " +
+            (categoryNames[selectedCategory] || "ทั้งหมด");
 
 
-    products.forEach(function(product) {
+        /* -----------------------------
+           แสดงสินค้า
+        ----------------------------- */
 
-        if (product.category === selectedCategory) {
+        var productList =
+            document.getElementById("productList");
 
-            productList.innerHTML += `
+
+        products.forEach(function (product) {
+
+            if (product.category === selectedCategory) {
+
+                productList.innerHTML += `
 
                 <div class="product">
 
@@ -361,11 +357,11 @@
 
             `;
 
-        }
+            }
 
-    });
+        });
 
-</script>
+    </script>
 
 
 </body>

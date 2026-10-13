@@ -5,14 +5,12 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>รายละเอียดสินค้า - Music Ranking</title>
 
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -155,7 +153,6 @@
             }
 
         }
-
     </style>
 
 </head>
@@ -164,297 +161,288 @@
 <body>
 
 
-<header>
+    <header>
 
-    <h1>🎵 Music Ranking</h1>
+        <h1>🎵 Music Ranking</h1>
 
-</header>
-
-
-<div class="menu">
-
-    <a href="index.html">
-        🏠 หน้าแรก
-    </a>
-
-    <a href="category.html?category=guitar">
-        🎸 กีตาร์
-    </a>
-
-    <a href="category.html?category=piano">
-        🎹 เปียโน
-    </a>
-
-    <a href="category.html?category=drum">
-        🥁 กลอง
-    </a>
-
-    <a href="category.html?category=studio">
-        🎤 สตูดิโอ
-    </a>
-
-</div>
+    </header>
 
 
-<div class="container">
+    <div class="menu">
 
-    <div class="detail-box">
+        <a href="index.html">
+            🏠 หน้าแรก
+        </a>
+
+        <a href="category.html?category=guitar">
+            🎸 กีตาร์
+        </a>
+
+        <a href="category.html?category=piano">
+            🎹 เปียโน
+        </a>
+
+        <a href="category.html?category=drum">
+            🥁 กลอง
+        </a>
+
+        <a href="category.html?category=studio">
+            🎤 สตูดิโอ
+        </a>
+
+    </div>
 
 
-        <div class="detail-image">
+    <div class="container">
 
-            <img
-                id="productImage"
-                src=""
-                alt="สินค้า">
-
-        </div>
+        <div class="detail-box">
 
 
-        <div class="detail-content">
+            <div class="detail-image">
 
-            <div
-                class="category-name"
-                id="productCategory">
+                <img id="productImage" src="" alt="สินค้า">
+
             </div>
 
-            <h2 id="productName">
-                กำลังโหลด...
-            </h2>
 
-            <div
-                class="price"
-                id="productPrice">
+            <div class="detail-content">
+
+                <div class="category-name" id="productCategory">
+                </div>
+
+                <h2 id="productName">
+                    กำลังโหลด...
+                </h2>
+
+                <div class="price" id="productPrice">
+                </div>
+
+                <p class="description" id="productDescription">
+                </p>
+
+
+                <table class="spec">
+
+                    <tr>
+
+                        <th>
+                            รายละเอียด
+                        </th>
+
+                        <th>
+                            ข้อมูล
+                        </th>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            ประเภท
+                        </td>
+
+                        <td id="specType">
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            เหมาะสำหรับ
+                        </td>
+
+                        <td id="specUse">
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            จุดเด่น
+                        </td>
+
+                        <td id="specFeature">
+                        </td>
+
+                    </tr>
+
+                </table>
+
+
+                <a href="#" class="buy-button">
+                    🛒 สั่งซื้อสินค้า
+                </a>
+
             </div>
-
-            <p
-                class="description"
-                id="productDescription">
-            </p>
-
-
-            <table class="spec">
-
-                <tr>
-
-                    <th>
-                        รายละเอียด
-                    </th>
-
-                    <th>
-                        ข้อมูล
-                    </th>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        ประเภท
-                    </td>
-
-                    <td id="specType">
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        เหมาะสำหรับ
-                    </td>
-
-                    <td id="specUse">
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>
-                        จุดเด่น
-                    </td>
-
-                    <td id="specFeature">
-                    </td>
-
-                </tr>
-
-            </table>
-
-
-            <a href="#" class="buy-button">
-                🛒 สั่งซื้อสินค้า
-            </a>
 
         </div>
 
     </div>
 
-</div>
+
+    <footer>
+
+        <p>
+            © 2026 Music Ranking
+        </p>
+
+    </footer>
 
 
-<footer>
+    <script>
 
-    <p>
-        © 2026 Music Ranking
-    </p>
+        /* -----------------------------
+           ข้อมูลสินค้า
+        ----------------------------- */
 
-</footer>
+        var products = {
 
+            "yamaha-f310": {
 
-<script>
+                name: "Yamaha F310",
 
-    /* -----------------------------
-       ข้อมูลสินค้า
-    ----------------------------- */
+                category: "🎸 กีตาร์",
 
-    var products = {
+                price: "4,500 บาท",
 
-        "yamaha-f310": {
+                image: "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=1000&q=80",
 
-            name: "Yamaha F310",
+                description:
+                    "กีตาร์โปร่งสำหรับผู้เริ่มต้น เหมาะสำหรับการฝึกเล่นและการเล่นดนตรีทั่วไป",
 
-            category: "🎸 กีตาร์",
+                type: "กีตาร์โปร่ง",
 
-            price: "4,500 บาท",
+                use: "ผู้เริ่มต้น",
 
-            image: "https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=1000&q=80",
+                feature: "เสียงดี จับคอง่าย และราคาเข้าถึงได้"
 
-            description:
-                "กีตาร์โปร่งสำหรับผู้เริ่มต้น เหมาะสำหรับการฝึกเล่นและการเล่นดนตรีทั่วไป",
-
-            type: "กีตาร์โปร่ง",
-
-            use: "ผู้เริ่มต้น",
-
-            feature: "เสียงดี จับคอง่าย และราคาเข้าถึงได้"
-
-        },
+            },
 
 
-        "casio-cdp-s100": {
+            "casio-cdp-s100": {
 
-            name: "Casio CDP-S100",
+                name: "Casio CDP-S100",
 
-            category: "🎹 เปียโนและคีย์บอร์ด",
+                category: "🎹 เปียโนและคีย์บอร์ด",
 
-            price: "14,900 บาท",
+                price: "14,900 บาท",
 
-            image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=1000&q=80",
 
-            description:
-                "เปียโนไฟฟ้าขนาดกะทัดรัด เหมาะสำหรับฝึกซ้อมและผู้เริ่มต้น",
+                description:
+                    "เปียโนไฟฟ้าขนาดกะทัดรัด เหมาะสำหรับฝึกซ้อมและผู้เริ่มต้น",
 
-            type: "Digital Piano",
+                type: "Digital Piano",
 
-            use: "ผู้เริ่มต้นและนักเรียนดนตรี",
+                use: "ผู้เริ่มต้นและนักเรียนดนตรี",
 
-            feature: "88 คีย์ พร้อม Hammer Action"
+                feature: "88 คีย์ พร้อม Hammer Action"
 
-        },
-
-
-        "roland-td-1dmk": {
-
-            name: "Roland TD-1DMK",
-
-            category: "🥁 กลองและเพอร์คัชชัน",
-
-            price: "28,500 บาท",
-
-            image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=1000&q=80",
-
-            description:
-                "กลองไฟฟ้าสำหรับผู้ที่ต้องการฝึกซ้อม ให้ความรู้สึกใกล้เคียงกับกลองจริง",
-
-            type: "กลองไฟฟ้า",
-
-            use: "ผู้เริ่มต้นและนักดนตรี",
-
-            feature: "Mesh Head และชุดเสียงหลายรูปแบบ"
-
-        },
+            },
 
 
-        "audio-technica-at2020": {
+            "roland-td-1dmk": {
 
-            name: "Audio-Technica AT2020",
+                name: "Roland TD-1DMK",
 
-            category: "🎤 อุปกรณ์สตูดิโอ",
+                category: "🥁 กลองและเพอร์คัชชัน",
 
-            price: "3,990 บาท",
+                price: "28,500 บาท",
 
-            image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=1000&q=80",
 
-            description:
-                "ไมโครโฟนสำหรับบันทึกเสียง เหมาะสำหรับร้องเพลง ทำเพลง และงานสตูดิโอ",
+                description:
+                    "กลองไฟฟ้าสำหรับผู้ที่ต้องการฝึกซ้อม ให้ความรู้สึกใกล้เคียงกับกลองจริง",
 
-            type: "Condenser Microphone",
+                type: "กลองไฟฟ้า",
 
-            use: "ร้องเพลงและบันทึกเสียง",
+                use: "ผู้เริ่มต้นและนักดนตรี",
 
-            feature: "Cardioid และตอบสนองความถี่กว้าง"
+                feature: "Mesh Head และชุดเสียงหลายรูปแบบ"
+
+            },
+
+
+            "audio-technica-at2020": {
+
+                name: "Audio-Technica AT2020",
+
+                category: "🎤 อุปกรณ์สตูดิโอ",
+
+                price: "3,990 บาท",
+
+                image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1000&q=80",
+
+                description:
+                    "ไมโครโฟนสำหรับบันทึกเสียง เหมาะสำหรับร้องเพลง ทำเพลง และงานสตูดิโอ",
+
+                type: "Condenser Microphone",
+
+                use: "ร้องเพลงและบันทึกเสียง",
+
+                feature: "Cardioid และตอบสนองความถี่กว้าง"
+
+            }
+
+        };
+
+
+        /* -----------------------------
+           อ่านชื่อสินค้าจาก URL
+        ----------------------------- */
+
+        var urlParams =
+            new URLSearchParams(window.location.search);
+
+        var productID =
+            urlParams.get("product");
+
+
+        var product =
+            products[productID];
+
+
+        /* -----------------------------
+           แสดงข้อมูล
+        ----------------------------- */
+
+        if (product) {
+
+            document.getElementById("productImage").src =
+                product.image;
+
+            document.getElementById("productImage").alt =
+                product.name;
+
+            document.getElementById("productCategory").innerText =
+                product.category;
+
+            document.getElementById("productName").innerText =
+                product.name;
+
+            document.getElementById("productPrice").innerText =
+                product.price;
+
+            document.getElementById("productDescription").innerText =
+                product.description;
+
+            document.getElementById("specType").innerText =
+                product.type;
+
+            document.getElementById("specUse").innerText =
+                product.use;
+
+            document.getElementById("specFeature").innerText =
+                product.feature;
+
+            document.title =
+                product.name + " - Music Ranking";
 
         }
 
-    };
-
-
-    /* -----------------------------
-       อ่านชื่อสินค้าจาก URL
-    ----------------------------- */
-
-    var urlParams =
-        new URLSearchParams(window.location.search);
-
-    var productID =
-        urlParams.get("product");
-
-
-    var product =
-        products[productID];
-
-
-    /* -----------------------------
-       แสดงข้อมูล
-    ----------------------------- */
-
-    if (product) {
-
-        document.getElementById("productImage").src =
-            product.image;
-
-        document.getElementById("productImage").alt =
-            product.name;
-
-        document.getElementById("productCategory").innerText =
-            product.category;
-
-        document.getElementById("productName").innerText =
-            product.name;
-
-        document.getElementById("productPrice").innerText =
-            product.price;
-
-        document.getElementById("productDescription").innerText =
-            product.description;
-
-        document.getElementById("specType").innerText =
-            product.type;
-
-        document.getElementById("specUse").innerText =
-            product.use;
-
-        document.getElementById("specFeature").innerText =
-            product.feature;
-
-        document.title =
-            product.name + " - Music Ranking";
-
-    }
-
-</script>
+    </script>
 
 
 </body>
