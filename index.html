@@ -1,698 +1,133 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Music Ranking - จัดอันดับเครื่องดนตรี</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /* Header */
-
-        header {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
-
-        header h1 {
-            margin: 0 0 10px;
-            font-size: 32px;
-        }
-
-        header p {
-            margin: 0;
-            color: #ddd;
-        }
-
-        /* Category */
-
-        .category {
-            background-color: white;
-            text-align: center;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .category a {
-            display: inline-block;
-            background-color: #eee;
-            color: #333;
-            padding: 10px 18px;
-            margin: 5px;
-            border-radius: 5px;
-        }
-
-        .category a:hover {
-            background-color: #222;
-            color: white;
-        }
-
-        /* Container */
-
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 30px auto;
-        }
-
-        /* Filter */
-
-        .filter-box {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 25px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-
-        .filter-box h2 {
-            margin-top: 0;
-        }
-
-        .filter-box select {
-            padding: 10px;
-            width: 280px;
-            border: 1px solid #aaa;
-            border-radius: 5px;
-        }
-
-        /* Product */
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .product {
-            background-color: white;
-            width: calc(50% - 10px);
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .product:hover {
-            border-color: #222;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Image */
-
-        .product-image {
-            width: 100%;
-            height: 240px;
-            overflow: hidden;
-            background-color: #ddd;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Content */
-
-        .product-content {
-            padding: 20px;
-        }
-
-        .rank {
-            display: inline-block;
-            background-color: #f0a500;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .category-name {
-            color: #777;
-            font-size: 14px;
-        }
-
-        .product h3 {
-            margin: 8px 0;
-            font-size: 22px;
-        }
-
-        .price {
-            color: #d35400;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .description {
-            line-height: 1.6;
-            color: #555;
-        }
-
-        /* Badge */
-
-        .badge {
-            display: inline-block;
-            padding: 5px 8px;
-            margin: 3px 3px 8px 0;
-            border-radius: 4px;
-            font-size: 12px;
-            color: white;
-        }
-
-        .bestseller {
-            background-color: #e74c3c;
-        }
-
-        .warranty {
-            background-color: #27ae60;
-        }
-
-        /* Table */
-
-        .spec {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        .spec th,
-        .spec td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        .spec th {
-            background-color: #f2f2f2;
-        }
-
-        /* Button */
-
-        .detail-button {
-            display: block;
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 5px;
-        }
-
-        .detail-button:hover {
-            background-color: #555;
-        }
-
-        /* Footer */
-
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        /* Responsive */
-
-        @media screen and (max-width: 700px) {
-
-            .product {
-                width: 100%;
-            }
-
-            header h1 {
-                font-size: 25px;
-            }
-
-            .filter-box select {
-                width: 100%;
-            }
-        }
-    </style>
+    <meta name="description" content="จัดอันดับและแนะนำเครื่องดนตรีสำหรับผู้เริ่มต้น">
+    <title>Music Ranking | จัดอันดับเครื่องดนตรี</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-
 <body>
-
-    <header>
-
-        <h1>🎵 Music Ranking</h1>
-
-        <p>
-            จัดอันดับเครื่องดนตรีและแนะนำสินค้าที่น่าสนใจ
-        </p>
-
+    <header class="site-header">
+        <div class="nav-bar">
+            <a class="brand" href="index.html">Music <span>Ranking</span></a>
+            <nav aria-label="เมนูหลัก"><ul class="nav-links">
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="#ranking">จัดอันดับ</a></li>
+                <li><a href="team.html">ติดต่อได้ที่นี่</a></li>
+            </ul></nav>
+        </div>
+        <div class="page-container hero">
+            <div>
+                <p class="eyebrow">FIND YOUR SOUND</p>
+                <h1>เลือกเครื่องดนตรีที่ใช่ <span class="accent">ในแบบของคุณ</span></h1>
+                <p class="hero-text">Music Ranking รวบรวมเครื่องดนตรีและอุปกรณ์ที่น่าสนใจ พร้อมข้อมูลสั้น ๆ เพื่อช่วยเปรียบเทียบก่อนตัดสินใจ</p>
+                <a class="button" href="#ranking">ดูอันดับแนะนำ</a>
+            </div>
+            <div class="hero-art" aria-hidden="true"><div class="music-disc"></div></div>
+        </div>
     </header>
 
+    <main class="main-content">
+        <nav class="category-nav" aria-label="หมวดหมู่เครื่องดนตรี">
+            <a class="current" href="index.html">ทั้งหมด</a>
+            <a href="category.html?category=guitar">กีตาร์</a>
+            <a href="category.html?category=piano">เปียโนและคีย์บอร์ด</a>
+            <a href="category.html?category=drum">กลอง</a>
+            <a href="category.html?category=wind">เครื่องเป่า</a>
+            <a href="category.html?category=studio">🎤 สตูดิโอ</a>
+        </nav>
 
-    <!-- หมวดหมู่ -->
+        <div class="page-container">
+            <section class="filter-box" aria-labelledby="filter-title">
+                <h2 id="filter-title">เลือกงบประมาณ</h2>
+                <div>
+                    <label for="price">ช่วงราคา</label><br>
+                    <select id="price">
+                        <option value="all">ทุกช่วงราคา</option>
+                        <option value="low">งบประหยัด ต่ำกว่า 5,000 บาท</option>
+                        <option value="medium">งบระดับกลาง 5,000 - 20,000 บาท</option>
+                        <option value="high">ระดับโปร 20,000 บาทขึ้นไป</option>
+                    </select>
+                </div>
+            </section>
 
-    <div class="category">
-
-        <a href="index.html">
-            ทั้งหมด
-        </a>
-
-        <a href="category.html?category=guitar">
-            🎸 กีตาร์
-        </a>
-
-        <a href="category.html?category=piano">
-            🎹 เปียโนและคีย์บอร์ด
-        </a>
-
-        <a href="category.html?category=drum">
-            🥁 กลองและเพอร์คัชชัน
-        </a>
-
-        <a href="category.html?category=wind">
-            🎷 เครื่องเป่า
-        </a>
-
-        <a href="category.html?category=studio">
-            🎤 อุปกรณ์สตูดิโอ
-        </a>
-
-    </div>
-
-
-    <div class="container">
-
-        <!-- Filter ราคา -->
-
-        <div class="filter-box">
-
-            <h2>🔎 เลือกงบประมาณ</h2>
-
-            <label for="price">
-                ช่วงราคา:
-            </label>
-
-            <select id="price">
-
-                <option value="all">
-                    ทุกช่วงราคา
-                </option>
-
-                <option value="low">
-                    งบประหยัด ต่ำกว่า 5,000 บาท
-                </option>
-
-                <option value="medium">
-                    งบระดับกลาง 5,000 - 20,000 บาท
-                </option>
-
-                <option value="high">
-                    ระดับโปร 20,000 บาทขึ้นไป
-                </option>
-
-            </select>
-
+            <section id="ranking" aria-labelledby="ranking-title">
+                <div class="section-heading">
+                    <div><p class="eyebrow">TOP PICKS</p><h2 id="ranking-title">อันดับเครื่องดนตรีที่น่าสนใจ</h2></div>
+                    <p class="muted">เลือกดูรายละเอียดเพื่ออ่านสเปกเพิ่มเติม</p>
+                </div>
+                <div class="product-grid" id="product-list">
+                    <article class="product-card" data-price="8990">
+                        <div class="product-image"><img src="https://www.musicarms.net/wp-content/uploads/2026/05/Preme-Neo-X-1.webp" alt="Preme Neo-X Headless Guitar"></div>
+                        <div class="product-content">
+                            <span class="rank">TOP 1</span><span class="badge">ยอดนิยม</span>
+                            <p class="product-type">กีตาร์หัวตัด</p><h3>Preme Neo-X Headless Guitar</h3><p class="price">8,990 บาท</p>
+                            <p class="product-description">กีตาร์ไฟฟ้าสำหรับสายเมทัล ขนาดกะทัดรัดและเล่นได้คล่องตัว</p>
+                            <table class="spec-table"><tr><th>สาย</th><th>เฟรต</th><th>ไม้คอ</th></tr><tr><td>6 สาย</td><td>24 เฟรต</td><td>เมเปิล</td></tr></table>
+                            <a class="button button-block" href="detail.html?product=yamaha-f310">ดูรายละเอียด</a>
+                        </div>
+                    </article>
+                    <article class="product-card" data-price="3799">
+                        <div class="product-image"><img src="https://cdn.mos.cms.futurecdn.net/PAZJdQPqfWekv7qfYcAkQP-1200-80.jpg" alt="Nord Piano 6"></div>
+                        <div class="product-content">
+                            <span class="rank">TOP 2</span><span class="badge">ประกันศูนย์แท้</span>
+                            <p class="product-type">เปียโนและคีย์บอร์ด</p><h3>Nord Piano 6</h3><p class="price">3,799 บาท</p>
+                            <p class="product-description">เปียโนไฟฟ้าขนาดกะทัดรัด เหมาะสำหรับฝึกซ้อมและผู้เริ่มต้น</p>
+                            <table class="spec-table"><tr><th>จำนวนคีย์</th><th>ระบบคีย์</th></tr><tr><td>88 คีย์</td><td>Hammer Action</td></tr></table>
+                            <a class="button button-block" href="detail.html?product=casio-cdp-s100">ดูรายละเอียด</a>
+                        </div>
+                    </article>
+                    <article class="product-card" data-price="28500">
+                        <div class="product-image"><img src="https://www.musicarms.net/wp-content/uploads/2024/03/TAMA-SUPERSTAR-REISSUE-50TH-LTD-4.jpg" alt="Roland TD-1DMK"></div>
+                        <div class="product-content">
+                            <span class="rank">TOP 3</span><span class="badge">ยอดนิยม</span>
+                            <p class="product-type">กลองชุด</p><h3>Tama Superstar Reissue 50TH Limited</h3><p class="price">76,500 บาท</p>
+                            <p class="product-description">กลองชุดหรับฝึกซ้อม</p>
+                            <table class="spec-table"><tr><th>จำนวนกลอง</th><th>จำนวนแฉ</th></tr><tr><td>5 ชิ้น</td><td>5 ชิ้น</td></tr></table>
+                            <a class="button button-block" href="detail.html?product=roland-td-1dmk">ดูรายละเอียด</a>
+                        </div>
+                    </article>
+                    <article class="product-card" data-price="23500">
+                        <div class="product-image"><img src="https://shop.usa.yamaha.com/media/wysiwyg/ECOM1237000_TILE_Electric_Basses_0010.JPG" alt="TRBX604FM 4-String"></div>
+                        <div class="product-content">
+                            <span class="rank">TOP 4</span><span class="badge">ประกันศูนย์แท้</span>
+                            <p class="product-type">เบสไฟฟ้า</p><h3>TRBX604FM 4-String</h3><p class="price">23,500 บาท</p>
+                            <p class="product-description">เบสไฟฟ้า 4 สาย เหมาะสำหรับผู้ที่ต้องการโทนเสียงหลากหลาย</p>
+                            <table class="spec-table"><tr><th>สาย</th><th>เฟรต</th><th>ไม้คอ</th></tr><tr><td>4 สาย</td><td>24 เฟรต</td><td>เมเปิล</td></tr></table>
+                            <a class="button button-block" href="detail.html?product=audio-technica-at2020">ดูรายละเอียด</a>
+                        </div>
+                    </article>
+                </div>
+                <p id="no-results" class="empty-state" hidden>ไม่พบสินค้าในงบประมาณนี้ ลองเลือกช่วงราคาอื่น</p>
+            </section>
         </div>
-
-
-        <!-- รายการสินค้า -->
-
-        <div class="product-list">
-
-
-            <!-- Yamaha -->
-
-            <div class="product" data-price="4500">
-
-                <div class="product-image">
-
-                    <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=800&q=80"
-                        alt="Yamaha F310">
-
-                </div>
-
-                <div class="product-content">
-
-                    <div class="rank">
-                        TOP 1
-                    </div>
-
-                    <div>
-
-                        <span class="badge bestseller">
-                            ยอดนิยม
-                        </span>
-
-                        <span class="badge warranty">
-                            ประกันศูนย์แท้
-                        </span>
-
-                    </div>
-
-                    <div class="category-name">
-                        กีตาร์
-                    </div>
-
-                    <h3>
-                        Yamaha F310
-                    </h3>
-
-                    <div class="price">
-                        4,500 บาท
-                    </div>
-
-                    <p class="description">
-                        กีตาร์โปร่งสำหรับผู้เริ่มต้น
-                        เสียงดี จับคอง่าย และเหมาะสำหรับการฝึกเล่น
-                    </p>
-
-                    <table class="spec">
-
-                        <tr>
-                            <th>ขนาด</th>
-                            <th>ไม้หน้า</th>
-                        </tr>
-
-                        <tr>
-                            <td>41 นิ้ว</td>
-                            <td>Spruce</td>
-                        </tr>
-
-                    </table>
-
-                    <a href="detail.html?product=yamaha-f310" class="detail-button">
-
-                        ดูรายละเอียด
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Casio -->
-
-            <div class="product" data-price="14900">
-
-                <div class="product-image">
-
-                    <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=80"
-                        alt="Casio CDP-S100">
-
-                </div>
-
-                <div class="product-content">
-
-                    <div class="rank">
-                        TOP 2
-                    </div>
-
-                    <span class="badge warranty">
-                        ประกันศูนย์แท้
-                    </span>
-
-                    <div class="category-name">
-                        เปียโนและคีย์บอร์ด
-                    </div>
-
-                    <h3>
-                        Casio CDP-S100
-                    </h3>
-
-                    <div class="price">
-                        14,900 บาท
-                    </div>
-
-                    <p class="description">
-                        เปียโนไฟฟ้าขนาดกะทัดรัด
-                        เหมาะสำหรับฝึกซ้อมและผู้เริ่มต้น
-                    </p>
-
-                    <table class="spec">
-
-                        <tr>
-                            <th>จำนวนคีย์</th>
-                            <th>ระบบคีย์</th>
-                        </tr>
-
-                        <tr>
-                            <td>88 คีย์</td>
-                            <td>Hammer Action</td>
-                        </tr>
-
-                    </table>
-
-                    <a href="detail.html?product=casio-cdp-s100" class="detail-button">
-
-                        ดูรายละเอียด
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Roland -->
-
-            <div class="product" data-price="28500">
-
-                <div class="product-image">
-
-                    <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=800&q=80"
-                        alt="Roland TD-1DMK">
-
-                </div>
-
-                <div class="product-content">
-
-                    <div class="rank">
-                        TOP 3
-                    </div>
-
-                    <span class="badge bestseller">
-                        ยอดนิยม
-                    </span>
-
-                    <span class="badge warranty">
-                        ประกันศูนย์แท้
-                    </span>
-
-                    <div class="category-name">
-                        กลองและเพอร์คัชชัน
-                    </div>
-
-                    <h3>
-                        Roland TD-1DMK
-                    </h3>
-
-                    <div class="price">
-                        28,500 บาท
-                    </div>
-
-                    <p class="description">
-                        กลองไฟฟ้าสำหรับผู้ที่ต้องการฝึกซ้อม
-                        ให้ความรู้สึกใกล้เคียงกับกลองจริง
-                    </p>
-
-                    <table class="spec">
-
-                        <tr>
-                            <th>ประเภทแป้นตี</th>
-                            <th>ชุดเสียง</th>
-                        </tr>
-
-                        <tr>
-                            <td>Mesh Head</td>
-                            <td>15 ชุด</td>
-                        </tr>
-
-                    </table>
-
-                    <a href="detail.html?product=roland-td-1dmk" class="detail-button">
-
-                        ดูรายละเอียด
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Audio Technica -->
-
-            <div class="product" data-price="3990">
-
-                <div class="product-image">
-
-                    <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80"
-                        alt="Audio-Technica AT2020">
-
-                </div>
-
-                <div class="product-content">
-
-                    <div class="rank">
-                        TOP 4
-                    </div>
-
-                    <span class="badge bestseller">
-                        ยอดนิยม
-                    </span>
-
-                    <span class="badge warranty">
-                        ประกันศูนย์แท้
-                    </span>
-
-                    <div class="category-name">
-                        อุปกรณ์สตูดิโอ
-                    </div>
-
-                    <h3>
-                        Audio-Technica AT2020
-                    </h3>
-
-                    <div class="price">
-                        3,990 บาท
-                    </div>
-
-                    <p class="description">
-                        ไมโครโฟนสำหรับบันทึกเสียง
-                        เหมาะสำหรับการร้องเพลงและทำเพลง
-                    </p>
-
-                    <table class="spec">
-
-                        <tr>
-                            <th>รูปแบบรับเสียง</th>
-                            <th>ความถี่</th>
-                        </tr>
-
-                        <tr>
-                            <td>Cardioid</td>
-                            <td>20Hz - 20kHz</td>
-                        </tr>
-
-                    </table>
-
-                    <a href="detail.html?product=audio-technica-at2020" class="detail-button">
-
-                        ดูรายละเอียด
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-    <footer>
-        <a href="team.html" class="detail-button">ทีมงาน</a>
-        <p>
-            © 2026 Music Ranking
-        </p>
-
-        <p>
-            เว็บไซต์จัดอันดับและแนะนำเครื่องดนตรี
-        </p>
-
+    </main>
+
+    <footer class="site-footer">
+        <p><strong>Music <span class="accent">Ranking</span></strong></p><p>เว็บไซต์จัดอันดับและแนะนำเครื่องดนตรี</p>
+        <p><a href="team.html">รู้จักทีมผู้จัดทำและติดต่อเรา</a></p><p>© 2026 Music Ranking</p>
     </footer>
 
-
-    <!-- JavaScript สำหรับกรองราคา -->
-
     <script>
-
+        // ตัวกรองนี้ซ่อนหรือแสดงการ์ดตามช่วงราคาที่เลือก
         var priceSelect = document.getElementById("price");
-
-        var products = document.querySelectorAll(".product");
-
-
+        var products = document.querySelectorAll(".product-card");
+        var noResults = document.getElementById("no-results");
         priceSelect.addEventListener("change", function () {
-
             var selectedPrice = this.value;
-
-
+            var visibleProducts = 0;
             products.forEach(function (product) {
-
-                var price = Number(product.getAttribute("data-price"));
-
-                var showProduct = false;
-
-
-                if (selectedPrice === "all") {
-
-                    showProduct = true;
-
-                }
-
-                else if (selectedPrice === "low" && price < 5000) {
-
-                    showProduct = true;
-
-                }
-
-                else if (
-                    selectedPrice === "medium" &&
-                    price >= 5000 &&
-                    price <= 20000
-                ) {
-
-                    showProduct = true;
-
-                }
-
-                else if (selectedPrice === "high" && price > 20000) {
-
-                    showProduct = true;
-
-                }
-
-
-                if (showProduct) {
-
-                    product.style.display = "block";
-
-                }
-
-                else {
-
-                    product.style.display = "none";
-
-                }
-
+                var productPrice = Number(product.getAttribute("data-price"));
+                var showProduct = selectedPrice === "all" ||
+                    (selectedPrice === "low" && productPrice < 5000) ||
+                    (selectedPrice === "medium" && productPrice >= 5000 && productPrice <= 20000) ||
+                    (selectedPrice === "high" && productPrice > 20000);
+                product.hidden = !showProduct;
+                if (showProduct) visibleProducts++;
             });
-
+            noResults.hidden = visibleProducts !== 0;
         });
-
     </script>
-
-    <a href="team.html">Go to Team</a>
-
-
 </body>
-
 </html>

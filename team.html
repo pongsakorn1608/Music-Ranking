@@ -1,69 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Ranking - จัดอันดับเครื่องดนตรี</title>
+    <meta name="description" content="ข้อมูลทีมผู้จัดทำ Music Ranking">
+    <title>รู้จักเรา | Music Ranking</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#home">
-                Music Ranking
-            </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">หน้าหลัก</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ranking">จัดอันดับ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">เกี่ยวกับเรา</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">ทีมงาน</a>
-                    </li>
-                </ul>
-            </div>
+    <header class="site-header">
+        <div class="nav-bar">
+            <a class="brand" href="index.html">Music <span>Ranking</span></a>
+            <nav aria-label="เมนูหลัก"><ul class="nav-links">
+                <li><a href="index.html">หน้าหลัก</a></li><li><a href="#team">ทีมงาน</a></li><li><a href="#contact">ติดต่อเรา</a></li>
+            </ul></nav>
         </div>
-    </nav>
-
-    <section id="home">
-        <h1>Welcome to Music Ranking</h1>
-    </section>
-
-    <section id="ranking">
-        <h2>จัดอันดับเครื่องดนตรี</h2>
-    </section>
-
-    <section id="about">
-        <h2>ประวัติบริษัท</h2>
-    </section>
-
-    <section id="team">
-        <h2>ทีมงานของเรา</h2>
-        <p>นายพงศก แซ่โซ่ง</h2>
-            1.ไพโรจน์ แซ่สง</h2>
-            2.พงศกร แซ๋โซ่ง</h2>
-            3.ธนภัทร มัณฑะ</h2>
-            4.อนุตร  ลีรัตนะกุลวงศ์</h2>
-            5.สุวัจน์ พิมประวัติ</h2>
-<hr>
-        </p><hr>
-        
-    </section>
-
-    <a href="index.html">Go to Index</a>
+        <div class="page-container">
+            <p class="eyebrow">ABOUT US</p>
+            <h1>รู้จัก <span class="accent">Music Ranking</span></h1>
+            <p class="hero-text">พื้นที่สำหรับคนรักเสียงดนตรี ที่รวบรวมข้อมูลและจัดอันดับเครื่องดนตรี เพื่อให้เลือกศึกษาเครื่องดนตรีที่สนใจได้ง่ายขึ้น</p>
+        </div>
+    </header>
+    <main class="main-content"><div class="page-container">
+        <section class="info-grid" aria-label="เกี่ยวกับเว็บไซต์">
+            <article class="info-card"><h2>เกี่ยวกับเว็บไซต์</h2><p>Music Ranking เป็นเว็บไซต์ที่จัดทำขึ้นเพื่อรวบรวมข้อมูลเครื่องดนตรีประเภทต่าง ๆ พร้อมนำเสนอการจัดอันดับในรูปแบบที่เข้าใจง่าย</p></article>
+            <article class="info-card"><h2>วัตถุประสงค์</h2><p>เว็บไซต์นี้เป็นส่วนหนึ่งของโปรเจกต์เพื่อฝึกพัฒนาเว็บด้วย HTML, CSS และ JavaScript พื้นฐาน โดยเน้นให้ผู้จัดทำอ่านและอธิบายโค้ดได้</p></article>
+        </section>
+        <section id="team" style="margin-top: 3rem;">
+            <div class="section-heading"><div><p class="eyebrow">OUR TEAM</p><h2>ทีมงานของเรา</h2></div><p class="muted">ผู้จัดทำเว็บไซต์ Music Ranking</p></div>
+            <div class="team-grid">
+                <article class="info-card team-card"><div class="avatar">01</div><h3>ไพโรจน์ แซ่สง</h3><p>ผู้จัดทำเว็บไซต์</p></article>
+                <article class="info-card team-card"><div class="avatar">02</div><h3>พงศกร แซ๋โซ่ง</h3><p>ผู้จัดทำเว็บไซต์</p></article>
+                <article class="info-card team-card"><div class="avatar">03</div><h3>ธนภัทร มัณฑะ</h3><p>ผู้จัดทำเว็บไซต์</p></article>
+                <article class="info-card team-card"><div class="avatar">04</div><h3>อนุตร ลีรัตนะกุลวงศ์</h3><p>ผู้จัดทำเว็บไซต์</p></article>
+                <article class="info-card team-card"><div class="avatar">05</div><h3>สุวัจน์ พิมประวัติ</h3><p>ผู้จัดทำเว็บไซต์</p></article>
+            </div>
+        </section>
+        <section id="contact" style="margin-top: 3rem;">
+            <div class="section-heading"><div><p class="eyebrow">CONTACT</p><h2>ติดต่อเรา</h2></div></div>
+            <div class="contact-box">
+                <p class="muted">ติดตามข่าวสารของสถาบันการจัดการปัญญาภิวัฒน์ (PIM) ได้จากช่องทางด้านล่าง</p>
+                <div class="social-links">
+                    <a href="https://www.pim.ac.th/" target="_blank" rel="noopener noreferrer">เว็บไซต์ PIM</a>
+                    <a href="https://www.facebook.com/pimfanpage" target="_blank" rel="noopener noreferrer">Facebook PIM</a>
+                    <a href="https://www.instagram.com/teampim/" target="_blank" rel="noopener noreferrer">Instagram PIM</a>
+                </div>
+            </div>
+        </section>
+    </div></main>
+    <footer class="site-footer"><p><a href="index.html">← กลับหน้าหลัก</a></p><p>© 2026 Music Ranking</p></footer>
 </body>
-
 </html>
